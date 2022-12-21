@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "63a20bb963a62ca4391b1a07"
+  },
+  "price": 230,
+  "name": "TV"
+},{
+  "_id": {
+    "$oid": "63a20c2dbe0400d112c5ba4c"
+  },
+  "name": "Radio",
+  "price": 75,
+  "marka": "Philips"
+},{
+  "_id": {
+    "$oid": "63a20cc1be0400d112c5ba4d"
+  },
+  "price": 330,
+  "name": "TV"
+},{
+  "_id": {
+    "$oid": "63a20f7363a62ca4391b1a08"
+  },
+  "name": "Playstation",
+  "price": 550
+},{
+  "_id": {
+    "$oid": "63a20f7363a62ca4391b1a09"
+  },
+  "name": "IpadMini"
+},{
+  "_id": {
+    "$oid": "63a20f7363a62ca4391b1a0a"
+  },
+  "iphone13": 600,
+  "tax": 100
+},{
+  "_id": {
+    "$oid": "63a211b263a62ca4391b1a0b"
+  },
+  "name": "iron",
+  "tax": 12
+},{
+  "_id": {
+    "$oid": "63a212ed63a62ca4391b1a0c"
+  },
+  "name": "airbuds",
+  "price": 20
+}]
