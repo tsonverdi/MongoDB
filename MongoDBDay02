@@ -1,0 +1,73 @@
+//24-Dökümanların sadece price ve name bilgileri gelsin
+//25-yukardaki soruyu price değerine göre sıralıyalım
+26// TV leri azalan fiyata göre getirelim.
+
+NOTE:
+Comparison Operators
+    Eşitlik     ==> $eq
+    Küçüktür    ==> $lt
+    Büyüktür    ==> $gt
+    Küçük eşit  ==> $lte
+    Büyük eşit  ==> $gte
+    Eşit değil  ==> $ne
+    Dizi içinde ==> $in
+    Dizi değil  ==> $nin
+
+27// fiyatı 95 olan dökümanı bulun
+
+28// fiyatı 300 den az veya eşit olan dökümanları bulun
+
+29// yukardaki soruda id çıktıda gözükmesin
+
+30//price i d100den buyuk veya esit olan dokumanlar
+
+31//fiyati 230,75,120den biri olan dokumanlari getirin
+
+32//price degeri 230 75 120 olmayan dokumanlari getirin
+
+//=================================================================
+//            findOneAndUpdate - findOneAndReplace
+//=================================================================
+// A - findOneAndReplace()
+//----------------------------
+//   1-) belirtilen koşullara uyan ilk sorguyu bulur ve degistirir.
+//   2-) Komut icerisinde belirtilen kisimlari guncellerken bos birakilan
+//       alanlari kaldirir. (API'lerdeki PUT metoduna benzetilebilir).
+//   3-) Islem sonunda ilgili dokumanin guncellenmemiş halini gosterir.yani ben bunu değiştirdim diye haber veriyor
+//
+// B - findOneAndUpdate()
+//----------------------------
+///  1-) Belirtilen koşullara uyan ilk sorguyu bulur ve degistirir.
+//   2-) Komut icerisinde belirtilen kisimlari guncellerken bos birakilan
+//       alanlari modifiye etmez  (API'lerdeki PATCH metoduna benzetilebilir).
+//   3-) komutun kosul kismindan sonra degislikileri gerceklestirmek icin bir
+//       atomic operator kullanilir. ($set (direk değer verilirse), $inc(arttırma azaltma), $mul (çarpma)vb.)
+//   4)  Islem sonunda ilgili dokumanin guncellenMEmiş halini gosterir.
+//=================================================================
+// ÖNEMLİ : !!!  bu 2 kod çalıştığında dökümanın update olmamış hali ekrana gelir.
+
+33// Fiyatı 200 den az olan dökümanı bulup name bilgisini "Car" olarak, fiuatını da 2000 olarak değiştirin
+
+34// Price bilgisi 100 den büyük olan dökümanlar içinde price bilgisi en düşük olanın ismini "En Ucuz" olarak değiştirin
+
+
+35//Price bilgisi 100den buyuk olan dokumanlar icinde fiyati en buyuk olanin ismini
+en pahali olarak degistiriniz
+
+36// Price bilgisi 100 en küçük olan dökümanın ismini "Güncellendi" olarak değiştirin, diğer field lar silinmesin
+
+37//Fiyati 230 olan dokumani bulup fiyatini 250 yapip ekran ciktisini guncel hali ile basiniz/
+
+38//Fiyatı 230 olan dökümanı bulup name bilgisini "Gold", 
+fiyatını 250 yapıp konsol çıktısında update edilmiş sonucu gösterelim, 
+eğer böyle bir döküman yoksa yeni oluşturalım
+
+39//Fiyatı 230 olan dökümanı bulup name bilgisini "Gold", fiyatını 250 yapıp konsol çıktısında update edilmiş sonucu gösterelim, eğer böyle bir döküman yoksa yeni oluşturalım
+db.electronics.findOneAndUpdate({"price":{$eq:230}} , {$set:{"price":250,"name":"Gold"}} , {returnNewDocument:true ,upsert:true })
+
+//Açıklama : çıktının güncel dökümanı göstermesi için returnNewDocument değerini true yaptık, filtre ile aranan döküman yoksa 
+yeni oluşturulması için upsert değerini true yaptık
+
+Birden fazla dokumani ayni anda degistirmke istersek?
+//Fiyati 300den dusuk olan butun dokumanlarin ismini Woww yapalim
+
